@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Spatial Epidemiology</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/quarto.js"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="index_files/libs/quarto-html/anchor.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="index_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Spatial Epidemiology</h1>
+<p class="subtitle lead">Independent Study for Ph.D.&nbsp;students | Spring 2026 | College of Health, LEHIGH | Eric Delmelle</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p><img src="banner.png" class="img-fluid"></p>
+<p><span class="in-person">In Person</span> | <span class="online">Online</span></p>
+<section id="meeting-1-thu-jan-22-9001000-orientation-project-launch" class="level3">
+<h3 class="anchored" data-anchor-id="meeting-1-thu-jan-22-9001000-orientation-project-launch">Meeting 1 <span class="in-person">Thu Jan 22, 9:00–10:00</span>: Orientation &amp; Project Launch</h3>
+<ul>
+<li>Class expectations, learning outcomes</li>
+<li>Discussion of the different concepts of spatial epidemiology</li>
+<li>Open discussion</li>
+</ul>
+</section>
+<section id="meeting-2-thu-jan-31-10001100-geocoding-fundamentals" class="level3">
+<h3 class="anchored" data-anchor-id="meeting-2-thu-jan-31-10001100-geocoding-fundamentals">Meeting 2 <span class="online">Thu Jan 31, 10:00–11:00</span>: Geocoding Fundamentals</h3>
+<ul>
+<li>Units of analysis, MAUP, and spatial thinking</li>
+<li>Geocoding accuracy: positional error and match rates</li>
+<li>Disclosure risk and privacy protection methods</li>
+<li>Aggregation, suppression, and geomasking (jittering, donut masking)</li>
+<li>HIPAA and ethical frameworks for spatial health data</li>
+<li><a href="https://spatialepilehigh.github.io/geocodingGeomaskingHIPAA/">GITHUB Link</a></li>
+</ul>
+</section>
+<section id="meeting-3-mon-feb-2-600700-more-on-privacy-resolution-impact" class="level3">
+<h3 class="anchored" data-anchor-id="meeting-3-mon-feb-2-600700-more-on-privacy-resolution-impact">Meeting 3 <span class="online">Mon Feb 2, 6:00–7:00</span>: More on Privacy &amp; Resolution Impact</h3>
+<ul>
+<li>Geocoding positional error: magnitude, patterns, and spatial clustering</li>
+<li>Impact on spatial analysis: nearest neighbors, cluster detection, and statistical power</li>
+<li>HIPAA privacy-utility tradeoff: 28% systematic error and geographic bias</li>
+<li>Power reduction when disease and geocoding failure are associated</li>
+<li>Research needs and policy recommendations (standardized tools, HIPAA reform, reporting standards)</li>
+<li><a href="https://spatialepilehigh.github.io/GeocodingAccuracyPrivacyProtection">GITHUB Link</a></li>
+<li><span style="color: #667eea;">Exercise 1: Hands-on application of geocoding and geomasking concepts</span>
+<ul>
+<li><a href="https://github.com/SpatialEpiLehigh/exercise1/blob/main/ex1.qmd">quarto link</a></li>
+<li><a href="https://spatialepilehigh.github.io/exercise1">GITHUB link</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="meeting-4-thu-feb-12-9001000-disease-mapping-rate-stabilization" class="level3">
+<h3 class="anchored" data-anchor-id="meeting-4-thu-feb-12-9001000-disease-mapping-rate-stabilization">Meeting 4 <span class="in-person">Thu Feb 12, 9:00–10:00</span>: Disease Mapping &amp; Rate Stabilization</h3>
+<ul>
+<li>From crude rates to stable estimates: dealing with small numbers</li>
+<li>Expected counts, Standardized Mortality/Morbidity Ratios (SMR)</li>
+<li>Empirical Bayes and Bayesian smoothing methods</li>
+<li>Mapping choices and visual communication</li>
+<li><span style="color: #667eea;">Exercise 2 demonstrated</span></li>
+<li><strong>Deliverable:</strong> Exercise 1 draft outputs (internal vs.&nbsp;public map)</li>
+</ul>
+</section>
+<section id="meeting-5-tue-feb-17-9001000-autocorrelation" class="level3">
+<h3 class="anchored" data-anchor-id="meeting-5-tue-feb-17-9001000-autocorrelation">Meeting 5 <span class="online">Tue Feb 17, 9:00–10:00</span>: Autocorrelation</h3>
+<ul>
+<li>Spatial autocorrelation: Global Moran’s I</li>
+<li>Local Indicators of Spatial Association (LISA)</li>
+<li>Multiple testing and significance mapping challenges</li>
+<li><span style="color: #667eea;">Exercise 3 demonstrated</span></li>
+<li><strong>Deliverable:</strong> Exercise 2: Preliminary crude rate, SMR, and EB maps; initial diagnostics</li>
+</ul>
+</section>
+<section id="meeting-6-thu-feb-26-9001000-cluster-detection" class="level3">
+<h3 class="anchored" data-anchor-id="meeting-6-thu-feb-26-9001000-cluster-detection">Meeting 6 <span class="in-person">Thu Feb 26, 9:00–10:00</span>: Cluster Detection</h3>
+<ul>
+<li>Cluster detection vs.&nbsp;clustering: key distinctions</li>
+<li>Scan statistics and spatial scanning methods</li>
+<li>Parameter sensitivity and cluster interpretation</li>
+<li>What clusters mean (and don’t mean) for public health action</li>
+<li><span style="color: #667eea;">Exercise 4 demonstrated</span></li>
+<li><strong>Deliverable:</strong> Exercise 3 is due (rate workflow + LISA map + interpretation memo)</li>
+</ul>
+</section>
+<section id="meeting-7-thu-mar-5-9001000-bias-in-spatial-and-temporal-data" class="level3">
+<h3 class="anchored" data-anchor-id="meeting-7-thu-mar-5-9001000-bias-in-spatial-and-temporal-data">Meeting 7 <span class="online">Thu Mar 5, 9:00–10:00</span>: Bias in Spatial and Temporal Data</h3>
+<ul>
+<li>Bias and MAUP in cluster detection</li>
+<li>Population-at-risk considerations</li>
+<li>Temporal caveats and communicating uncertainty</li>
+<li><strong>Deliverable:</strong> Exercise 4 is due: Cluster method selected; parameters justified; preliminary output</li>
+</ul>
+</section>
+<section id="meeting-8-mon-mar-16-600700-spatial-accessibility" class="level3">
+<h3 class="anchored" data-anchor-id="meeting-8-mon-mar-16-600700-spatial-accessibility">Meeting 8 <span class="online">Mon Mar 16, 6:00–7:00</span>: Spatial Accessibility</h3>
+<ul>
+<li>Accessibility concepts: catchments, impedance, and distance decay</li>
+<li>Two-Step Floating Catchment Area (2SFCA) methods</li>
+<li>Equity framing: identifying underserved populations</li>
+<li><span style="color: #667eea;">Exercise 5 demonstrated</span></li>
+<li><strong>Deliverable:</strong> Final cluster map + interpretation (addressing scale sensitivity and multiple testing)</li>
+</ul>
+</section>
+<section id="meeting-9-wed-mar-25-630730-spatial-accessibility-contd" class="level3">
+<h3 class="anchored" data-anchor-id="meeting-9-wed-mar-25-630730-spatial-accessibility-contd">Meeting 9 <span class="online">Wed Mar 25, 6:30–7:30</span>: Spatial Accessibility (cont’d)</h3>
+<ul>
+<li>Sensitivity to methodological parameters (thresholds, decay functions)</li>
+<li>Modifiable catchment area problems</li>
+<li><strong>Deliverable:</strong> Preliminary access scores and map; underserved areas identified</li>
+</ul>
+</section>
+<section id="meeting-10-thu-apr-2-9001000-spatial-flows-interaction" class="level3">
+<h3 class="anchored" data-anchor-id="meeting-10-thu-apr-2-9001000-spatial-flows-interaction">Meeting 10 <span class="online">Thu Apr 2, 9:00–10:00</span>: Spatial Flows &amp; Interaction</h3>
+<ul>
+<li>Origin-Destination (OD) tables and desire lines</li>
+<li>Scaling, filtering, and visualizing flows</li>
+<li>Identifying hubs and corridors</li>
+<li>MAUP considerations in flow mapping</li>
+<li><span style="color: #667eea;">Exercise 6 (flows) demonstrated</span></li>
+<li><strong>Deliverable:</strong> Final accessibility outputs + short policy memo paragraph</li>
+</ul>
+</section>
+<section id="meeting-11-thu-apr-9-9001000-spatial-flows-interaction-contd" class="level3">
+<h3 class="anchored" data-anchor-id="meeting-11-thu-apr-9-9001000-spatial-flows-interaction-contd">Meeting 11 <span class="in-person">Thu Apr 9, 9:00–10:00</span>: Spatial Flows &amp; Interaction (cont’d)</h3>
+<ul>
+<li>Interpreting spatial interaction patterns</li>
+<li>Dominant corridors and connectivity</li>
+<li>Modifiable zoning issues and visualization pitfalls</li>
+<li><strong>Deliverable:</strong> Preliminary OD table + draft flow map (desire lines or aggregated flows)</li>
+</ul>
+</section>
+<section id="meeting-12-thu-apr-16-9001000-spatial-regression" class="level3">
+<h3 class="anchored" data-anchor-id="meeting-12-thu-apr-16-9001000-spatial-regression">Meeting 12 <span class="in-person">Thu Apr 16, 9:00–10:00</span>: Spatial Regression</h3>
+<ul>
+<li>When OLS/GLM fails: residual spatial autocorrelation</li>
+<li>Spatial lag vs.&nbsp;spatial error models</li>
+<li>Spatially lagged covariates and fixed effects</li>
+<li>Distinguishing spatial structure from spillover effects</li>
+<li><span style="color: #667eea;">Exercise 7 demonstrated</span></li>
+<li><strong>Deliverable:</strong> Exercise 6 is due: Final flow visualization + interpretation (hubs, corridors, scale effects)</li>
+</ul>
+</section>
+<section id="meeting-13-mon-apr-20-600700-spatial-regression-contd" class="level3">
+<h3 class="anchored" data-anchor-id="meeting-13-mon-apr-20-600700-spatial-regression-contd">Meeting 13 <span class="online">Mon Apr 20, 6:00–7:00</span>: Spatial Regression (cont’d)</h3>
+<ul>
+<li>Model comparison and interpreting coefficient changes</li>
+<li>Writing methods and results sections for spatial analysis</li>
+<li>Limitations, threats to validity, and reproducibility</li>
+<li><strong>Deliverable:</strong> Exercise 7 is due: Baseline model + residual Moran’s I; spatial modeling strategy selected; Model comparison table</li>
+</ul>
+</section>
+<section id="meeting-14-thu-apr-30-9001000-geostatistics" class="level3">
+<h3 class="anchored" data-anchor-id="meeting-14-thu-apr-30-9001000-geostatistics">Meeting 14 <span class="in-person">Thu Apr 30, 9:00–10:00</span>: Geostatistics</h3>
+<ul>
+<li>Point support vs.&nbsp;area support in spatial prediction</li>
+<li>Inverse Distance Weighting (IDW) vs.&nbsp;kriging</li>
+<li>Variogram interpretation and prediction uncertainty</li>
+<li>Sampling design considerations</li>
+<li><span style="color: #667eea;">In-class exercise on geostatistics</span></li>
+<li><strong>Deliverable:</strong> Draft manuscript due for feedback</li>
+</ul>
+</section>
+<section id="date-tbd-final-presentations" class="level3">
+<h3 class="anchored" data-anchor-id="date-tbd-final-presentations">Date TBD: Final Presentations</h3>
+<ul>
+<li><strong>Deliverable:</strong> Presentations</li>
+<li><strong>Deliverable:</strong> Submission-ready manuscript + target journal selection</li>
+</ul>
+<hr>
+<p><a href="mailto:delmelle@gmail.com">delmelle@gmail.com</a></p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

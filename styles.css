@@ -1,0 +1,38 @@
+.legend {
+  background-color: #f8f9fa;
+  padding: 12px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  text-align: center;
+  border-left: 4px solid #667eea;
+}
+
+.in-person {
+  background-color: #ffcc80;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  color: #e65100;
+}
+
+.online {
+  background-color: #c8e6c9;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  color: #2e7d32;
+}
+
+img[src="banner.png"] {
+  width: 50%;
+  display: block;
+  margin-left: 0;  /* Change from auto to 0 */
+  margin-right: auto;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+strong {
+  color: #d32f2f;
+}
